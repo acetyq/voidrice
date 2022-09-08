@@ -13,12 +13,12 @@ wmpid(){ # This function is needed if there are multiple instances of the window
 	echo "${tree%%)*}"
 }
 
-case "$(printf "🔒 lock\n🚪 leave $WM\n♻️ renew $WM\n🔃 reboot\n🖥️shutdown\n📺 display off" | dmenu -i -p 'Action: ')" in
-	'🔒 lock') betterlockscreen -l ;;
-	"🚪 leave $WM") kill -TERM "$(wmpid)" ;;
-	"♻️ renew $WM") kill -HUP "$(wmpid)" ;;
-	'🔃 reboot') $ctl reboot -i ;;
-	'🖥️shutdown') $ctl poweroff -i ;;
-	'📺 display off') xset dpms force off ;;
+case "$(printf "lock\nleave $WM\nrenew $WM\nreboot\nshutdown\ndisplay off" | dmenu -i -p 'Action: ')" in
+	'lock') betterlockscreen -l ;;
+	"leave $WM") kill -TERM "$(wmpid)" ;;
+	"renew $WM") kill -HUP "$(wmpid)" ;;
+	'reboot') $ctl reboot -i ;;
+	'shutdown') $ctl poweroff -i ;;
+	'display off') xset dpms force off ;;
 	*) exit 1 ;;
 esac
