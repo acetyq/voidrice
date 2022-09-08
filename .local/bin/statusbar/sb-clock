@@ -1,5 +1,5 @@
 #!/bin/sh
 
-clock=$(date '+%I')
+clock=$(date '+%H')
 
-date "+%Y-%m-%d | %I:%M "
+date "+%Y-%m-%d | %H:%M "
