@@ -45,7 +45,9 @@ alias \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
 	xq="xbps-query" \
-	z="zathura"
+	z="zathura" \
+	nf="neofetch" \
+	cl="clear"
 
 alias \
 	lf="lfub" \
